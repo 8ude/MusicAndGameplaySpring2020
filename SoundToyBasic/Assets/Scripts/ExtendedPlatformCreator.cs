@@ -76,8 +76,7 @@ public class ExtendedPlatformCreator : MonoBehaviour {
     {
         platformModel = platformPrefabs[0].transform;
         
-        platformPrefabColor.color =
-            platformModel.GetComponent<Renderer>().sharedMaterial.color;
+        platformPrefabColor.color = platformModel.GetComponent<Renderer>().sharedMaterial.color;
         
     }
 

@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class BallSpawner : MonoBehaviour {
 
-	public Transform model;
+	public GameObject model;
 	public float rate = 1.0f;
 
 	float progress = 0.0f;
 
 	void Spawn()
 	{
-		Transform next = Instantiate(model, transform.position, transform.rotation) as Transform;
-		next.parent = transform;
-		next.localPosition = Vector3.zero;
+        GameObject next = Instantiate(model, transform.position, transform.rotation);
+		next.transform.parent = transform;
+		next.transform.localPosition = Vector3.zero;
 	}
 
 	void Update()
