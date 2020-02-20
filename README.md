@@ -13,6 +13,14 @@ Upload these in the appropriate sub folder at [THIS LINK](https://drive.google.c
 
 Label them as YourName_YourProjectName
 
+## Week 3 Assignment -- Last Sound Toy Prototype
+
+Due In-Class Monday Feb 24
+
+Try to go in a different direction with this last sound toy prototype - maybe use a different control surface (for example, you can get input from a MIDI controller using Kejiro Takahashi's MIDIJack: https://github.com/keijiro/MidiJack), do something that plays with timing and rhythm, and get away from bouncing balls.
+
+In addition to presenting these in class, please upload a **Windows Build** in [THIS FOLDER](https://drive.google.com/open?id=13tJg8sUqce9CbYxbcsW66ymdj2j2UpV8)   
+
 ## Week 2 Assignment -- Sound Toy Prototype 2
 
 Due In-Class Monday Feb 10
