@@ -13,6 +13,14 @@ Upload these in the appropriate sub folder at [THIS LINK](https://drive.google.c
 
 Label them as YourName_YourProjectName
 
+## Week 5 Assignment -- Rhythm Game Prototype 1
+
+Due In-Class Monday March 2
+
+Option 1: Using the template project, make **new music** and a **beatmap** for the game.  The beatmap is essentially your level - edit this on the "Beatmap" game object.  The audio clip for the music should go on the clock script.  make sure to change the tempo to match your song.
+
+Option 2: If you feel comfortable with coding, try making your own rhythm game.  you still need to make the music and beatmap, but maybe you change the inputs, the feedback, or the theming (instead of falling sphere's, use a different cue/input system)
+
 ## Week 3 Assignment -- Last Sound Toy Prototype
 
 Due In-Class Monday Feb 24
