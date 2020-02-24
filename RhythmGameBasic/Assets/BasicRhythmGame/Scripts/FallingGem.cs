@@ -11,7 +11,7 @@ public class FallingGem : MonoBehaviour
     public double GoodWindowStart, PerfectWindowStart, PerfectWindowEnd, GoodWindowEnd, OkWindowEnd;
     public double crossingTime;
 
-    public double cueTime;
+    //public double cueTime;
 
     public enum CueState { Early = 0, OK = 1, Good = 2, Perfect = 3, Late = 4}
     public CueState gemCueState;
@@ -52,9 +52,9 @@ public class FallingGem : MonoBehaviour
 
         //we want to make sure that the cue crosses our destination on beat, so we update the velocity every frame
         //but we also want it to keep going after it crosses the destination, so we're going to do a distance check 
-        if (Vector3.Distance(destination, transform.position) > 0.2f)
+        if (Vector3.Distance(destination, transform.position) > 0.1f)
         {
-            velocity = (destination - transform.position) / (float)(0.0001f * (crossingTime - Clock.Instance.TimeMS));
+            velocity = (destination - transform.position) / (float)(0.001f * (crossingTime - Clock.Instance.TimeMS));
         }
   
     }

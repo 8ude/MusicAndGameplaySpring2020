@@ -45,7 +45,6 @@ public class InputEvaluator : MonoBehaviour
         {
             if (Input.GetKeyDown(currentBeatmap.playerInputKeys[i]))
             {
-                Debug.Log("Input Occured");
                 RhythmInput _rhythmInput = new RhythmInput();
                 _rhythmInput.inputKey = currentBeatmap.playerInputKeys[i];
                 _rhythmInput.inputTime = Clock.Instance.TimeMS;

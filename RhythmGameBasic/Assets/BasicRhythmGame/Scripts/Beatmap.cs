@@ -15,8 +15,8 @@ public class BeatMapEvent
     public MBT eventMBT;
 
     //these need to be public because other events will change them, but we don't want to mess with them in the inspector
-    [HideInInspector] public bool cueCalled = false;
-    [HideInInspector] public bool cueActive = false;
+    //[HideInInspector] public bool cueCalled = false;
+    //[HideInInspector] public bool cueActive = false;
 
     //Using Keyboard for now, eventually we'll use the input manager;
     [Tooltip("Make Sure This Matches one of your PlayerInputKeys!")]
@@ -102,8 +102,7 @@ public class Beatmap : MonoBehaviour
             {
 
                 CreateCue();
-                //Add something visueal here - juice particles, maybe start your animations, 
-                Debug.Log("fire cue");
+                //Add something visual here - juice particles, maybe start your animations?
 
 
                 beatEventIndex++;
@@ -152,6 +151,8 @@ public class Beatmap : MonoBehaviour
         fallingGem.GoodWindowEnd = fallingGem.bmEvent.eventMBT.GetMilliseconds() + (0.5d * GoodWindowMillis);
         fallingGem.PerfectWindowStart = fallingGem.bmEvent.eventMBT.GetMilliseconds() - (0.5d * PerfectWindowMillis);
         fallingGem.PerfectWindowEnd = fallingGem.bmEvent.eventMBT.GetMilliseconds() + (0.5d * PerfectWindowMillis);
+
+        fallingGem.crossingTime = fallingGem.bmEvent.eventMBT.GetMilliseconds();
         
     }
 

@@ -148,7 +148,7 @@ BoxCollider:
   m_GameObject: {fileID: 140440074}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -205,13 +205,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 140440074}
-  m_LocalRotation: {x: -0.1694482, y: -0, z: -0, w: 0.9855391}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.57}
   m_LocalScale: {x: 16.397312, y: 0.32877, z: 0.26384997}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: -19.511002, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &289311527
 GameObject:
   m_ObjectHideFlags: 0
@@ -236,7 +236,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 289311527}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1, y: 0, z: 5}
+  m_LocalPosition: {x: -1, y: 0, z: 8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -266,7 +266,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 464838499}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 5}
+  m_LocalPosition: {x: 0, y: 0, z: 8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -311,7 +311,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 563127938}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -479,7 +479,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 938599953}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 0, z: 5}
+  m_LocalPosition: {x: 1, y: 0, z: 8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -776,7 +776,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9342a8e8ab9f35f4caf9b520d1cae8eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartDelay: 0
+  StartDelay: 0.25
   Measures: 0
   Beats: 0
   Ticks: 0
@@ -923,40 +923,76 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   beatEvents:
   - eventMBT:
-      Measure: 4
-      Beat: 0
-      Tick: 0
-    cueCalled: 0
-    cueActive: 0
+      Measure: 5
+      Beat: 1
+      Tick: 1
     inputKey: 114
-    currentState: 0
     cueTime: 0
   - eventMBT:
       Measure: 6
-      Beat: 0
-      Tick: 0
-    cueCalled: 0
-    cueActive: 0
+      Beat: 1
+      Tick: 1
     inputKey: 103
-    currentState: 0
     cueTime: 0
   - eventMBT:
       Measure: 7
-      Beat: 0
-      Tick: 0
-    cueCalled: 0
-    cueActive: 0
+      Beat: 1
+      Tick: 1
     inputKey: 98
-    currentState: 0
     cueTime: 0
   - eventMBT:
       Measure: 8
-      Beat: 0
-      Tick: 0
-    cueCalled: 0
-    cueActive: 0
+      Beat: 1
+      Tick: 1
     inputKey: 114
-    currentState: 0
+    cueTime: 0
+  - eventMBT:
+      Measure: 9
+      Beat: 1
+      Tick: 1
+    inputKey: 114
+    cueTime: 0
+  - eventMBT:
+      Measure: 9
+      Beat: 3
+      Tick: 1
+    inputKey: 103
+    cueTime: 0
+  - eventMBT:
+      Measure: 10
+      Beat: 1
+      Tick: 1
+    inputKey: 114
+    cueTime: 0
+  - eventMBT:
+      Measure: 11
+      Beat: 1
+      Tick: 1
+    inputKey: 98
+    cueTime: 0
+  - eventMBT:
+      Measure: 11
+      Beat: 2
+      Tick: 1
+    inputKey: 103
+    cueTime: 0
+  - eventMBT:
+      Measure: 11
+      Beat: 3
+      Tick: 1
+    inputKey: 114
+    cueTime: 0
+  - eventMBT:
+      Measure: 11
+      Beat: 4
+      Tick: 1
+    inputKey: 98
+    cueTime: 0
+  - eventMBT:
+      Measure: 12
+      Beat: 1
+      Tick: 1
+    inputKey: 103
     cueTime: 0
   cueBeatOffset: 4
   OkWindowMillis: 200

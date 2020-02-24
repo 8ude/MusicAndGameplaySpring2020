@@ -25,8 +25,8 @@ namespace Beat
 
         public int GetTickValue()
         {
-            //starting at measure 1, so we aren't counting that
-            return ((Measure-1) * (Clock.Instance.beatsPerMeasure * 96)) + (Beat * 96) + Tick;
+            //Measures, Beats and Ticks all start at 1, so we aren't counting them
+            return ((Measure-1) * (Clock.Instance.beatsPerMeasure * 96)) + ((Beat-1) * 96) + (Tick);
         }
 
         //Use this after start is called to get the time in milliseconds of this MBT

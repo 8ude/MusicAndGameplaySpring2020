@@ -113,6 +113,8 @@ MonoBehaviour:
   GoodWindowEnd: 0
   OkWindowEnd: 0
   crossingTime: 0
+  cueTime: 0
+  gemCueState: 0
   destination: {x: 0, y: 0, z: 0}
   bmEvent:
     eventMBT:
@@ -122,7 +124,6 @@ MonoBehaviour:
     cueCalled: 0
     cueActive: 0
     inputKey: 0
-    currentState: 0
     cueTime: 0
 --- !u!54 &-6279881597069713161
 Rigidbody:
