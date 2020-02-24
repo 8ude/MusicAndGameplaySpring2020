@@ -10,6 +10,8 @@ using Beat;
 [System.Serializable]
 public class BeatMapEvent
 {
+    //We use the measure-beat-tick class for the timings of our beatmap events
+    [Tooltip("The timing of your beatmap event")]
     public MBT eventMBT;
 
     //these need to be public because other events will change them, but we don't want to mess with them in the inspector
@@ -17,12 +19,8 @@ public class BeatMapEvent
     [HideInInspector] public bool cueActive = false;
 
     //Using Keyboard for now, eventually we'll use the input manager;
+    [Tooltip("Make Sure This Matches one of your PlayerInputKeys!")]
     public KeyCode inputKey;
-
-    //may not need this?
-    public enum beatEventState { Early = 0, OK = 1, Good = 2, Perfect = 3, Late = 4}
-    public beatEventState currentState;
-
 
     //this will be assigned at runtime;
     [HideInInspector] public double cueTime;
@@ -52,11 +50,6 @@ public class Beatmap : MonoBehaviour
     public double OkWindowMillis;
     public double GoodWindowMillis;
     public double PerfectWindowMillis;
-
-
-
-    
-
 
     int beatEventIndex = 0;
     int cueIndex = 0;
