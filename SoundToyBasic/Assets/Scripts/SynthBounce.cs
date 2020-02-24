@@ -14,7 +14,7 @@ public class SynthBounce : MonoBehaviour {
 	private pxStrax _straxSynth;
 	
 	//natural minor scale
-	private float[] notes = { 0, 2f, 3f, 5f, 7f, 8f, 10f, 12f };
+	private float[] notes = { 0, 2f, 3f, 5f, 7f, 9f, 12f };
 
 	void Start() {
 		//caching our components
@@ -62,6 +62,10 @@ public class SynthBounce : MonoBehaviour {
 		return Mathf.FloorToInt(clampedSpeed * 50);
 	}
 
+    //ideas for expansion: 
+    // **something that changes the base synth note
+    // **something that changes synth parameters
+    //
 
 
 

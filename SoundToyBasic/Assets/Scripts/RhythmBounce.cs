@@ -47,6 +47,8 @@ public class RhythmBounce : MonoBehaviour {
 		
 		_straxSynth.KeyOnScheduled(keyToPlay, nextTiming);
 
+
+
 	}
 	
 	/// <summary>

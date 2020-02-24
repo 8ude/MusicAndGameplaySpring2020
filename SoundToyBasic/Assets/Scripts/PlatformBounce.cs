@@ -14,13 +14,16 @@ public class PlatformBounce : MonoBehaviour {
 
 	void Start() {
 		_audioSource = GetComponent<AudioSource>();
+        
 	}
 
 	void OnCollisionEnter2D(Collision2D collision)
 	{
 		int noteIndex = GetCollisionStrength(collision);
-		
-		_audioSource.PlayOneShot(tones[noteIndex]);
+
+        _audioSource.PlayOneShot(tones[noteIndex]);
+        //_audioSource.clip = tones[noteIndex];
+        //_audioSource.PlayScheduled(Beat.Clock.Instance.AtNextSixteenth());
 
 	}
 	

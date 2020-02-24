@@ -7,6 +7,9 @@ public class BallSpawner : MonoBehaviour {
 	public GameObject model;
 	public float rate = 1.0f;
 
+    //this is public so we can tell the Platform Creator that we're using our mouse for something else, if 
+    public bool mouseOver = false;
+
 	float progress = 0.0f;
 
 	void Spawn()
@@ -25,4 +28,11 @@ public class BallSpawner : MonoBehaviour {
 			progress -= 1.0f;
 		}
 	}
+
+    //we could use this method if we want the player to be able to move the spawner around
+    private void OnMouseOver()
+    { 
+        
+    }
+
 }

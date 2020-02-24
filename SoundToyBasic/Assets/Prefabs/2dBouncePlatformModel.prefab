@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tones:
-  - {fileID: 8300000, guid: 32f09a73258774091ae41a3e1a8828ad, type: 3}
+  - {fileID: 8300000, guid: 31e3b5d39a9883e43ad710a2a9ea5e60, type: 3}
   - {fileID: 8300000, guid: c14accae171ac41d29983b462eaf9eea, type: 3}
   - {fileID: 8300000, guid: fae1fabb7936f49839e125f8f6df9052, type: 3}
   - {fileID: 8300000, guid: 477945f224b3e4686bfb29591f3a9f8c, type: 3}
@@ -142,11 +142,12 @@ AudioSource:
   m_GameObject: {fileID: 1427848896506232}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 750c559b8089ca14987729b9494460ae,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
-  m_Pitch: 1
+  m_Pitch: 2
   Loop: 0
   Mute: 0
   Spatialize: 0
