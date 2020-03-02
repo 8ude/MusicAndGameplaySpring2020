@@ -17,7 +17,7 @@ Label them as YourName_YourProjectName
 
 Due In-Class Monday March 9
 
-Revise your Rhythm Game, now using a MIDI file for your beatmap (follow [THIS TUTORIAL]() if you need a refresher)
+Revise your Rhythm Game, now using a MIDI file for your beatmap (follow [THIS TUTORIAL](https://github.com/8ude/MusicAndGameplaySpring2020/wiki/Rhythm-Game-MIDI-Beatmap-Tutorial) if you need a refresher)
 
 Particular areas to explore:
 
