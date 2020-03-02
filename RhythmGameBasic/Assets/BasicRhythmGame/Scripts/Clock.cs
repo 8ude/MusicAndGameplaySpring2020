@@ -231,6 +231,9 @@ namespace Beat
 
         public double Time;
         public double TimeMS;
+
+        public double TimeMSAdjusted;
+
         public bool Running = false;
         private double _startTime;
         public double startTime
@@ -281,6 +284,11 @@ namespace Beat
         private double _standardDeviationOfLatency;
 
         private double[] latency = new double[25];
+
+        //adjustment for de-sync
+        private double[] timeMSBuffer = new double[10];
+        private int _msBufferIndex = 0;
+
         public int latencyCalculationInterval;
         public AudioSource Source;
 
@@ -450,6 +458,11 @@ namespace Beat
             _startTime = startTick;
             Time = AudioSettings.dspTime - startTick;
             TimeMS = Time * 1000;
+
+            //attempting to adjust TimeMS
+            timeMSBuffer[0] = TimeMS;
+            _msBufferIndex = 1;
+
             _nextTick = startTick * _sampleRate + SamplesPerTick; //_tickLength;
             _nextThirtySecond = startTick + _thirtySecondLength;
             _nextSixteenthTriplet = startTick + _sixteenthTripletLength;
@@ -538,6 +551,26 @@ namespace Beat
                 }
             }
             TimeMS = Time * 1000;
+            timeMSBuffer[_msBufferIndex % timeMSBuffer.Length] = TimeMS;
+            //slight adjusting for frame-audio buffer de sync
+            if(_msBufferIndex > 1 && TimeMS == timeMSBuffer[(_msBufferIndex - 1) % timeMSBuffer.Length])
+            {
+                //check one prior frame
+                int numDuplicates = 1;
+                if(_msBufferIndex > 2 && TimeMS == timeMSBuffer[(_msBufferIndex - 2) % timeMSBuffer.Length])
+                {
+                    numDuplicates = 2;
+                }
+                //Debug.Log("duplicate time");
+                double timeMSAdjusted = TimeMS + (double)(UnityEngine.Time.deltaTime * numDuplicates);
+                //Debug.Log("TimeMS: " + TimeMS);
+
+            } else
+            {
+                //Debug.Log("not duplicate time");
+            }
+            _msBufferIndex += 1;
+
             if (TimeMS > 0 && !init)
             {
                 init = true;

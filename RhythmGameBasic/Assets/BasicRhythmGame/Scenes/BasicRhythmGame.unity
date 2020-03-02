@@ -284,6 +284,7 @@ GameObject:
   - component: {fileID: 563127941}
   - component: {fileID: 563127940}
   - component: {fileID: 563127939}
+  - component: {fileID: 563127943}
   m_Layer: 0
   m_Name: Killzone
   m_TagString: Untagged
@@ -364,6 +365,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &563127943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 563127938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b2c896857aa3df4393a38aac95a33e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -787,12 +800,13 @@ MonoBehaviour:
   AverageJitter: 0
   Time: 0
   TimeMS: 0
+  TimeMSAdjusted: 0
   Running: 0
   SamplesPerBeat: 0
   _tickCounter: 0
   SamplesPerTick: 0
   TickLength: 0
-  latencyCalculationInterval: 0
+  latencyCalculationInterval: 5
   Source: {fileID: 0}
   TimeLineControlled: 0
   ticksLastFrame: 0
@@ -902,6 +916,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1993080930}
   - component: {fileID: 1993080929}
+  - component: {fileID: 1993080931}
   m_Layer: 0
   m_Name: Beatmap
   m_TagString: Untagged
@@ -921,79 +936,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1216f3f78c366f746aac0b80295c8338, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  beatEvents:
-  - eventMBT:
-      Measure: 5
-      Beat: 1
-      Tick: 1
-    inputKey: 114
-    cueTime: 0
-  - eventMBT:
-      Measure: 6
-      Beat: 1
-      Tick: 1
-    inputKey: 103
-    cueTime: 0
-  - eventMBT:
-      Measure: 7
-      Beat: 1
-      Tick: 1
-    inputKey: 98
-    cueTime: 0
-  - eventMBT:
-      Measure: 8
-      Beat: 1
-      Tick: 1
-    inputKey: 114
-    cueTime: 0
-  - eventMBT:
-      Measure: 9
-      Beat: 1
-      Tick: 1
-    inputKey: 114
-    cueTime: 0
-  - eventMBT:
-      Measure: 9
-      Beat: 3
-      Tick: 1
-    inputKey: 103
-    cueTime: 0
-  - eventMBT:
-      Measure: 10
-      Beat: 1
-      Tick: 1
-    inputKey: 114
-    cueTime: 0
-  - eventMBT:
-      Measure: 11
-      Beat: 1
-      Tick: 1
-    inputKey: 98
-    cueTime: 0
-  - eventMBT:
-      Measure: 11
-      Beat: 2
-      Tick: 1
-    inputKey: 103
-    cueTime: 0
-  - eventMBT:
-      Measure: 11
-      Beat: 3
-      Tick: 1
-    inputKey: 114
-    cueTime: 0
-  - eventMBT:
-      Measure: 11
-      Beat: 4
-      Tick: 1
-    inputKey: 98
-    cueTime: 0
-  - eventMBT:
-      Measure: 12
-      Beat: 1
-      Tick: 1
-    inputKey: 103
-    cueTime: 0
+  beatEvents: []
   cueBeatOffset: 4
   OkWindowMillis: 200
   GoodWindowMillis: 100
@@ -1007,6 +950,8 @@ MonoBehaviour:
   - {fileID: 5483217214839925777, guid: 8fbce11d913830c4c880b83507eaf682, type: 3}
   - {fileID: 5037595431955545774, guid: ad2672390b03fd14584ccf3a1838fc48, type: 3}
   - {fileID: 4151618747842854423, guid: ffbd54c7acfcab74d91b873b9b2c4f2a, type: 3}
+  songSource: {fileID: 1993080931}
+  songName: BeatMapTest
 --- !u!4 &1993080930
 Transform:
   m_ObjectHideFlags: 0
@@ -1021,6 +966,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1993080931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1993080928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74f204a1b77f7c442b40b257e7dbfd6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2073621974
 GameObject:
   m_ObjectHideFlags: 0

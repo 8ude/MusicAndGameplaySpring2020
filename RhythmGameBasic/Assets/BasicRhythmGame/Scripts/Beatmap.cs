@@ -10,22 +10,23 @@ using Beat;
 [System.Serializable]
 public class BeatMapEvent
 {
-    //We use the measure-beat-tick class for the timings of our beatmap events
-    [Tooltip("The timing of your beatmap event")]
+    //a container for our Measure-Beat-Tick settings for our beatmap events
+    //we will be editing these when making our beatmaps
     public MBT eventMBT;
 
     //these need to be public because other events will change them, but we don't want to mess with them in the inspector
-    //[HideInInspector] public bool cueCalled = false;
-    //[HideInInspector] public bool cueActive = false;
+    [HideInInspector] public bool cueCalled = false;
+    [HideInInspector] public bool cueActive = false;
 
     //Using Keyboard for now, eventually we'll use the input manager;
-    [Tooltip("Make Sure This Matches one of your PlayerInputKeys!")]
+    [Tooltip("Make sure this matches one of your PlayerInputKeys!")]
     public KeyCode inputKey;
+
 
     //this will be assigned at runtime;
     [HideInInspector] public double cueTime;
     private GameObject _cueObject;
-    
+
 }
 
 /// <summary>
@@ -35,7 +36,7 @@ public class BeatMapEvent
 public class Beatmap : MonoBehaviour
 {
     [Header("Our Beatmap Level")]
-    public BeatMapEvent[] beatEvents;
+    public List<BeatMapEvent> beatEvents = new List<BeatMapEvent>();
 
     //the "cue" here can be a number of things
     //for now it's just the spawn time offset (in number of beats)
@@ -47,9 +48,10 @@ public class Beatmap : MonoBehaviour
 
     //Make sure the OkWindow > GoodWindow > PerfectWindow!!!  Also make sure that you don't have successive beatmap at shorter timespans than your OkWindow
     [Header("Window Sizes in MS")]
-    public double OkWindowMillis;
-    public double GoodWindowMillis;
-    public double PerfectWindowMillis;
+    public double OkWindowMillis = 200d;
+    public double GoodWindowMillis = 100d;
+    public double PerfectWindowMillis = 50d;
+
 
     int beatEventIndex = 0;
     int cueIndex = 0;
@@ -68,13 +70,23 @@ public class Beatmap : MonoBehaviour
 
     bool levelEndReached = false;
 
+    //this is for loading data from Midi files
+    public SongSource songSource;
 
+    private Song currentSong;
 
+    //this should match the name of your song in your Resources folder
+    public string songName;
+
+    private void Awake()
+    {
+        PrepareData(songName);
+    }
 
     void Start()
     {
 
-        for (int i = 0; i < beatEvents.Length; i++)
+        for (int i = 0; i < beatEvents.Count; i++)
         {
             //set the cue times for each beat event            
             beatEvents[i].cueTime = beatEvents[i].eventMBT.GetMilliseconds() - (cueBeatOffset * Clock.Instance.BeatLengthD() * 1000d);
@@ -90,7 +102,7 @@ public class Beatmap : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (beatEventIndex >= beatEvents.Length)
+        if (beatEventIndex >= beatEvents.Count)
         {
             levelEndReached = true;
         }
@@ -102,7 +114,8 @@ public class Beatmap : MonoBehaviour
             {
 
                 CreateCue();
-                //Add something visual here - juice particles, maybe start your animations?
+                //Add something visueal here - juice particles, maybe start your animations, 
+                Debug.Log("fire cue");
 
 
                 beatEventIndex++;
@@ -110,7 +123,7 @@ public class Beatmap : MonoBehaviour
             }
         }
 
-        
+
 
     }
 
@@ -152,11 +165,60 @@ public class Beatmap : MonoBehaviour
         fallingGem.PerfectWindowStart = fallingGem.bmEvent.eventMBT.GetMilliseconds() - (0.5d * PerfectWindowMillis);
         fallingGem.PerfectWindowEnd = fallingGem.bmEvent.eventMBT.GetMilliseconds() + (0.5d * PerfectWindowMillis);
 
-        fallingGem.crossingTime = fallingGem.bmEvent.eventMBT.GetMilliseconds();
-        
     }
 
-   
+    //this makes our beatmap from the json file
+    void PrepareData(string name)
+    {
+        currentSong = SongSource.getSong(name);
+        if (currentSong.tracks.Length > 0)
+        {
+
+            for (int i = 0; i < currentSong.tracks.Length; i++)
+            {
+                //go through each track first
+                for (int j = 0; j < currentSong.tracks[i].notes.Length; j++)
+                {
+
+                    //this will convert the note time from seconds to beats
+                    currentSong.tracks[i].notes[j].beatTime = currentSong.tracks[i].notes[j].time * currentSong.header.bpm / 60f;
+                    //assuming 4/4 time for now
+                    int measure = Mathf.FloorToInt(currentSong.tracks[i].notes[j].beatTime / 4f);
+                    int beat = Mathf.FloorToInt(currentSong.tracks[i].notes[j].beatTime - (measure * 4));
+                    int tick = Mathf.FloorToInt((currentSong.tracks[i].notes[j].beatTime - (measure * 4) - beat) * 96);
+                    currentSong.tracks[i].notes[j].mbtValue = new MBT(measure, beat, tick);
+
+                    //assign this midi note to a beatmap event
+                    BeatMapEvent bmEvent = new BeatMapEvent();
+                    bmEvent.eventMBT = currentSong.tracks[i].notes[j].mbtValue;
+                    bmEvent.eventMBT.Measure += 1;
+                    bmEvent.eventMBT.Beat += 1;
+                    bmEvent.eventMBT.Tick += 1;
+
+                    //depending on which note it is, assign the prefab accordingly
+                    switch (currentSong.tracks[i].notes[j].name)
+                    {
+                        case "C1":
+                            bmEvent.inputKey = KeyCode.R;
+                            break;
+                        case "C#1":
+                            bmEvent.inputKey = KeyCode.G;
+                            break;
+                        case "D1":
+                            bmEvent.inputKey = KeyCode.B;
+                            break;
+                    }
+
+                    beatEvents.Add(bmEvent);
+
+                }
+            }
+        }
+
+
+    }
+
+
 
 
 }

@@ -39,7 +39,6 @@ public class InputEvaluator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         //check for inputs and log them
         for (int i = 0; i < currentBeatmap.playerInputKeys.Length; i ++)
         {

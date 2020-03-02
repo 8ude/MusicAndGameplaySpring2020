@@ -22,6 +22,12 @@ public class FallingGem : MonoBehaviour
 
     private Vector3 velocity;
 
+    //testing consistency of crossing error
+    public float crossPositionOffset;
+
+    //debugging crossing sync issues
+    private bool _gemCrossed = false;
+
     
 
     Vector3 startPosition;
@@ -37,11 +43,15 @@ public class FallingGem : MonoBehaviour
         //we want to stay in the lane, so the destination will have the same x and y coordinates as the start.
         destination.x = transform.position.x;
         destination.y = transform.position.y;
+        destination.z -= crossPositionOffset;
 
         //velocity = distance/time -- we want to make sure that the cue crosses our destination on beat
         velocity = (destination - transform.position) / (float)(0.001f*(crossingTime - Clock.Instance.TimeMS));
 
         gemCueState = CueState.Early;
+        _gemCrossed = false;
+
+        
     }
 
     // Update is called once per frame
@@ -49,6 +59,12 @@ public class FallingGem : MonoBehaviour
     {
         transform.Translate(velocity * Time.deltaTime);
         UpdateWindow();
+
+        if (Clock.Instance.TimeMS >= crossingTime && !_gemCrossed)
+        {
+            Debug.Log("should cross now");
+            _gemCrossed = true;
+        }
 
         //we want to make sure that the cue crosses our destination on beat, so we update the velocity every frame
         //but we also want it to keep going after it crosses the destination, so we're going to do a distance check 
