@@ -13,6 +13,22 @@ Upload these in the appropriate sub folder at [THIS LINK](https://drive.google.c
 
 Label them as YourName_YourProjectName
 
+## Week 6 Assignment -- Rhythm Game Prototype 2
+
+Due In-Class Monday March 9
+
+Revise your Rhythm Game, now using a MIDI file for your beatmap (follow [THIS TUTORIAL]() if you need a refresher)
+
+Particular areas to explore:
+
+ - Art/Theming - Add particles, trail effects, or sprites!  Change the speed, make it look pretty, get rid of the default unity skybox!
+
+ - Revise your music - maybe extend your song to be longer, or change it up based on feedback you received during class
+
+ - Adding reference points and changing the cues - maybe the cues make noise when they appear.  Maybe you could add another visual element that happens every beat, but isn't scored.  How could you add a musical "grid" that moves in time?
+
+ - Animating background elements - we will explore music-driven animation in later weeks, but even some idle background animation can make the space feel much more alive.
+
 ## Week 5 Assignment -- Rhythm Game Prototype 1
 
 Due In-Class Monday March 2
