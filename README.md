@@ -13,6 +13,34 @@ Upload these in the appropriate sub folder at [THIS LINK](https://drive.google.c
 
 Label them as YourName_YourProjectName
 
+## Midterm Assignment -- Make a Music Game!
+
+DUE: **March 30**
+
+![RhythmHeaven](https://user-images.githubusercontent.com/6278122/76261433-56a7a100-6230-11ea-8291-0ea4f9cc3f31.gif)
+
+Working alone or in groups of 2-3, make a music game proof of concept (basically a more evolved prototype).  You can use one of your prototypes as a starting point, if you wish, but I encourage you to branch out or start over with a new concept.
+
+[Here's a link to a rubric](https://docs.google.com/document/d/1lUFDX3V7PwgEINvMLPGwZgYD2T9u1Ucqciu40XX0Od4/edit?usp=sharing)
+
+We will be doing a **Check-In on March 23** that I will grade Pass/Partial/Fail, worth 20 points (20% of your midterm grade).  I’m looking for something playable!  As always, if you are absent, please upload some gameplay footage to the appropriate [Student Submissions Folder](https://drive.google.com/drive/folders/1_uvt8mfxMRaz2n0_utDQjMEBZICB_bfL?usp=sharing)
+
+## Week 6 Assignment -- Rhythm Game Prototype 2
+
+Due In-Class Monday March 9
+
+Revise your Rhythm Game, now using a MIDI file for your beatmap (follow [THIS TUTORIAL](https://github.com/8ude/MusicAndGameplaySpring2020/wiki/Rhythm-Game-MIDI-Beatmap-Tutorial) if you need a refresher)
+
+Particular areas to explore:
+
+ - Art/Theming - Add particles, trail effects, or sprites!  Change the speed, make it look pretty, get rid of the default unity skybox!
+
+ - Revise your music - maybe extend your song to be longer, or change it up based on feedback you received during class
+
+ - Adding reference points and changing the cues - maybe the cues make noise when they appear.  Maybe you could add another visual element that happens every beat, but isn't scored.  How could you add a musical "grid" that moves in time?
+
+ - Animating background elements - we will explore music-driven animation in later weeks, but even some idle background animation can make the space feel much more alive.
+
 ## Week 5 Assignment -- Rhythm Game Prototype 1
 
 Due In-Class Monday March 2
