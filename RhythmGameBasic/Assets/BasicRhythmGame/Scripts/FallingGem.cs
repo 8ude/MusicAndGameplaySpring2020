@@ -62,13 +62,12 @@ public class FallingGem : MonoBehaviour
 
         if (Clock.Instance.TimeMS >= crossingTime && !_gemCrossed)
         {
-            Debug.Log("should cross now");
             _gemCrossed = true;
         }
 
         //we want to make sure that the cue crosses our destination on beat, so we update the velocity every frame
         //but we also want it to keep going after it crosses the destination, so we're going to do a distance check 
-        if (Vector3.Distance(destination, transform.position) > 0.1f)
+        if (Vector3.Distance(destination, transform.position) > 0.5f && !_gemCrossed) 
         {
             velocity = (destination - transform.position) / (float)(0.001f * (crossingTime - Clock.Instance.TimeMS));
         }
@@ -103,7 +102,6 @@ public class FallingGem : MonoBehaviour
                 else if (Clock.Instance.TimeMS > OkWindowEnd)
                 {
                     gemCueState = CueState.Late;
-
                 }
                 break;
             case CueState.Good:

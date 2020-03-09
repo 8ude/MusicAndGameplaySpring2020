@@ -551,6 +551,7 @@ namespace Beat
                 }
             }
             TimeMS = Time * 1000;
+
             timeMSBuffer[_msBufferIndex % timeMSBuffer.Length] = TimeMS;
             //slight adjusting for frame-audio buffer de sync
             if(_msBufferIndex > 1 && TimeMS == timeMSBuffer[(_msBufferIndex - 1) % timeMSBuffer.Length])

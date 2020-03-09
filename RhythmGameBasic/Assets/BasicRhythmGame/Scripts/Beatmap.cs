@@ -29,6 +29,17 @@ public class BeatMapEvent
 
 }
 
+//in progress - more modular input system
+[System.Serializable]
+public class FallingGemInput
+{
+
+    public string playerInput;
+    public GameObject[] cueStartLocations;
+    public GameObject[] cuePrefabs;
+
+}
+
 /// <summary>
 /// This class manages the different events in the beatmap.  Right now it's designed to go sequentially:
 /// once the cueTime is reached, it instantiates the cue 
@@ -64,9 +75,21 @@ public class Beatmap : MonoBehaviour
 
 
     //These should all be the same length, and should correspond to the different inputs, starting locations, and prefabs
+    //It isn't the best pattern - it's error prone; we should have one array instead of three, 
+    //so it has been improved with the "FallingGemInput" class
+    [Header("Old - Falling Gem Input")]
+    [Tooltip("Make sure these three arrays are the same length!")]
     public KeyCode[] playerInputKeys;
     public GameObject[] cueStartLocations;
     public GameObject[] cuePrefabs;
+
+    /*
+     * not ready yet :(
+    [Header("New - More General Input")]
+    public bool useFallingGemInputClass;
+    
+    public FallingGemInput[] fallingGemInputs;
+    */
 
     bool levelEndReached = false;
 
