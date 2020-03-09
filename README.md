@@ -15,6 +15,8 @@ Label them as YourName_YourProjectName
 
 ## Midterm Assignment -- Make a Music Game!
 
+![RhythmHeaven](https://user-images.githubusercontent.com/6278122/76261433-56a7a100-6230-11ea-8291-0ea4f9cc3f31.gif)
+
 Working alone or in groups of 2-3, make a music game proof of concept (basically a more evolved prototype).  You can use one of your prototypes as a starting point, if you wish, but I encourage you to branch out or start over with a new concept.
 
 [Here's a link to a rubric](https://docs.google.com/document/d/1lUFDX3V7PwgEINvMLPGwZgYD2T9u1Ucqciu40XX0Od4/edit?usp=sharing)
