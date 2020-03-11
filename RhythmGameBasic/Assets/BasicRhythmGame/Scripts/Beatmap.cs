@@ -22,6 +22,8 @@ public class BeatMapEvent
     [Tooltip("Make sure this matches one of your PlayerInputKeys!")]
     public KeyCode inputKey;
 
+    public string unityInput;
+
 
     //this will be assigned at runtime;
     [HideInInspector] public double cueTime;
@@ -33,10 +35,10 @@ public class BeatMapEvent
 [System.Serializable]
 public class FallingGemInput
 {
-
+    [Tooltip("this must match the name in unity's input manager")]
     public string playerInput;
-    public GameObject[] cueStartLocations;
-    public GameObject[] cuePrefabs;
+    public GameObject cueStartLocation;
+    public GameObject cuePrefab;
 
 }
 
@@ -77,23 +79,27 @@ public class Beatmap : MonoBehaviour
     //These should all be the same length, and should correspond to the different inputs, starting locations, and prefabs
     //It isn't the best pattern - it's error prone; we should have one array instead of three, 
     //so it has been improved with the "FallingGemInput" class
-    [Header("Old - Falling Gem Input")]
+    [Header("Old - Keyboard Input")]
     [Tooltip("Make sure these three arrays are the same length!")]
     public KeyCode[] playerInputKeys;
     public GameObject[] cueStartLocations;
     public GameObject[] cuePrefabs;
 
-    /*
-     * not ready yet :(
-    [Header("New - More General Input")]
+    
+
+    [Header("New - Using Unity Input Manager")]
     public bool useFallingGemInputClass;
     
     public FallingGemInput[] fallingGemInputs;
-    */
+
+    //scriptable object that we use to parse MIDI Notes -> gameplay inputs
+    public BeatmapParserKey beatmapParser;
+
 
     bool levelEndReached = false;
 
     //this is for loading data from Midi files
+    [Header("Song file information")]
     public SongSource songSource;
 
     private Song currentSong;
@@ -132,15 +138,22 @@ public class Beatmap : MonoBehaviour
 
         if (!levelEndReached)
         {
-            //Debug.Log("Event Millis in Update: " + beatEvents[beatEventIndex].eventMBT.GetMilliseconds());
+
             if (Clock.Instance.TimeMS >= beatEvents[beatEventIndex].cueTime)
             {
 
-                CreateCue();
-                //Add something visueal here - juice particles, maybe start your animations, 
-                Debug.Log("fire cue");
 
 
+                if (useFallingGemInputClass)
+                {
+                    CreateCueUnityInput();
+                }
+                else
+                {
+                    CreateCueKeyboardInput();
+                    //Add something visueal here - juice particles, maybe start your animations, 
+
+                }
                 beatEventIndex++;
 
             }
@@ -156,12 +169,15 @@ public class Beatmap : MonoBehaviour
         beatEventIndex = 0;
     }
 
-    public void CreateCue()
+    public void CreateCueKeyboardInput()
     {
 
-        Debug.Log("create cue");
+
+        //Debug.Log("create cue");
         //determining which cue lane we're in (which cue type we're using)
         int cueLaneIndex = int.MaxValue;
+
+        //go through each of our inputs and see which matches the beat event
         for (int i = 0; i < playerInputKeys.Length; i++)
         {
             if (playerInputKeys[i] == beatEvents[beatEventIndex].inputKey)
@@ -169,12 +185,23 @@ public class Beatmap : MonoBehaviour
                 cueLaneIndex = i;
             }
         }
+        
 
         if (cueLaneIndex == int.MaxValue)
         {
             Debug.LogWarning("beatmap input key doesn't match current inputs!");
         }
-        GameObject newCue = Instantiate(cuePrefabs[cueLaneIndex], cueStartLocations[cueLaneIndex].transform.position, Quaternion.identity);
+
+        GameObject newCue;
+
+        if (!useFallingGemInputClass)
+        {
+            newCue = Instantiate(cuePrefabs[cueLaneIndex], cueStartLocations[cueLaneIndex].transform.position, Quaternion.identity);
+        }
+        else
+        {
+            newCue = Instantiate(fallingGemInputs[cueLaneIndex].cuePrefab, fallingGemInputs[cueLaneIndex].cueStartLocation.transform.position, Quaternion.identity);
+        }
 
         FallingGem fallingGem = newCue.GetComponent<FallingGem>();
 
@@ -188,6 +215,43 @@ public class Beatmap : MonoBehaviour
         fallingGem.PerfectWindowStart = fallingGem.bmEvent.eventMBT.GetMilliseconds() - (0.5d * PerfectWindowMillis);
         fallingGem.PerfectWindowEnd = fallingGem.bmEvent.eventMBT.GetMilliseconds() + (0.5d * PerfectWindowMillis);
 
+    }
+
+    public void CreateCueUnityInput()
+    {
+        //Debug.Log("create cue");
+        //determining which cue lane we're in (which cue type we're using)
+        int cueLaneIndex = int.MaxValue;
+
+
+        for (int i = 0; i < fallingGemInputs.Length; i++)
+        {
+            if (fallingGemInputs[i].playerInput == beatEvents[beatEventIndex].unityInput)
+            {
+                cueLaneIndex = i;
+            }
+        }
+
+
+        if (cueLaneIndex == int.MaxValue)
+        {
+            Debug.LogWarning("beatmap input doesn't match current inputs!");
+        }
+
+        GameObject newCue = Instantiate(fallingGemInputs[cueLaneIndex].cuePrefab, fallingGemInputs[cueLaneIndex].cueStartLocation.transform.position, Quaternion.identity);
+        
+
+        FallingGem fallingGem = newCue.GetComponent<FallingGem>();
+
+        fallingGem.bmEvent = beatEvents[beatEventIndex];
+
+        //Set Window Timings
+        fallingGem.OkWindowStart = fallingGem.bmEvent.eventMBT.GetMilliseconds() - (0.5d * OkWindowMillis);
+        fallingGem.OkWindowEnd = fallingGem.bmEvent.eventMBT.GetMilliseconds() + (0.5d * OkWindowMillis);
+        fallingGem.GoodWindowStart = fallingGem.bmEvent.eventMBT.GetMilliseconds() - (0.5d * GoodWindowMillis);
+        fallingGem.GoodWindowEnd = fallingGem.bmEvent.eventMBT.GetMilliseconds() + (0.5d * GoodWindowMillis);
+        fallingGem.PerfectWindowStart = fallingGem.bmEvent.eventMBT.GetMilliseconds() - (0.5d * PerfectWindowMillis);
+        fallingGem.PerfectWindowEnd = fallingGem.bmEvent.eventMBT.GetMilliseconds() + (0.5d * PerfectWindowMillis);
     }
 
     //this makes our beatmap from the json file
@@ -219,17 +283,32 @@ public class Beatmap : MonoBehaviour
                     bmEvent.eventMBT.Tick += 1;
 
                     //depending on which note it is, assign the prefab accordingly
-                    switch (currentSong.tracks[i].notes[j].name)
+
+                    if (!useFallingGemInputClass)
                     {
-                        case "C1":
-                            bmEvent.inputKey = KeyCode.R;
-                            break;
-                        case "C#1":
-                            bmEvent.inputKey = KeyCode.G;
-                            break;
-                        case "D1":
-                            bmEvent.inputKey = KeyCode.B;
-                            break;
+                        switch (currentSong.tracks[i].notes[j].name)
+                        {
+                            case "C1":
+                                bmEvent.inputKey = KeyCode.R;
+                                break;
+                            case "C#1":
+                                bmEvent.inputKey = KeyCode.G;
+                                break;
+                            case "D1":
+                                bmEvent.inputKey = KeyCode.B;
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        foreach(BeatmapPair bmPair in beatmapParser.beatmapPairs)
+                        {
+                            if (bmPair.midiNote == currentSong.tracks[i].notes[j].name)
+                            {
+                                bmEvent.unityInput = bmPair.unityInput;
+                            }
+                        }
+                        
                     }
 
                     beatEvents.Add(bmEvent);

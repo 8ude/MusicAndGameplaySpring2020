@@ -8,6 +8,9 @@ public class RhythmInput
 {
     public KeyCode inputKey;
     public double inputTime;
+
+    //only relevant for updatedInputSystem
+    public string inputString;
 }
 
 /// <summary>
@@ -18,39 +21,61 @@ public class RhythmInput
 public class InputEvaluator : MonoBehaviour
 {
     
-    
-
-    
     public List<FallingGem> activeGems;
     public List<RhythmInput> CachedInputs = new List<RhythmInput>();
 
     public Beatmap currentBeatmap;
 
+    //Updated Input system uses Unity's Input manager
+    public bool usingUnityInputManager;
+
     //ideally we'd manage score on a seperate script
     public int gameScore;
 
  
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-   
+        usingUnityInputManager = currentBeatmap.useFallingGemInputClass;
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-        //check for inputs and log them
-        for (int i = 0; i < currentBeatmap.playerInputKeys.Length; i ++)
-        {
-            if (Input.GetKeyDown(currentBeatmap.playerInputKeys[i]))
-            {
-                RhythmInput _rhythmInput = new RhythmInput();
-                _rhythmInput.inputKey = currentBeatmap.playerInputKeys[i];
-                _rhythmInput.inputTime = Clock.Instance.TimeMS;
 
-                CachedInputs.Add(_rhythmInput);
+        if(usingUnityInputManager)
+        {
+            for (int i = 0; i < currentBeatmap.fallingGemInputs.Length; i++)
+            {
+
+                if (Input.GetButtonDown(currentBeatmap.fallingGemInputs[i].playerInput))
+                {
+                    RhythmInput _rhythmInput = new RhythmInput();
+                    _rhythmInput.inputString = currentBeatmap.fallingGemInputs[i].playerInput;
+                    _rhythmInput.inputTime = Clock.Instance.TimeMS;
+
+                    CachedInputs.Add(_rhythmInput);
+                }
+            }
+
+        }
+        else
+        {
+            for (int i = 0; i < currentBeatmap.playerInputKeys.Length; i++)
+            {
+                if (Input.GetKeyDown(currentBeatmap.playerInputKeys[i]))
+                {
+                    RhythmInput _rhythmInput = new RhythmInput();
+                    _rhythmInput.inputKey = currentBeatmap.playerInputKeys[i];
+                    _rhythmInput.inputTime = Clock.Instance.TimeMS;
+
+                    CachedInputs.Add(_rhythmInput);
+                }
             }
         }
+
+        
+        //old input system - check for keyboard inputs and log them
+        
 
 
 
@@ -72,7 +97,8 @@ public class InputEvaluator : MonoBehaviour
                 //go through each of our inputs from this frame, and check them against this gem
                 for (int j = 0; j < CachedInputs.Count; j++)
                 {
-                    if (CachedInputs[j].inputKey == activeGems[i].bmEvent.inputKey)
+                    if (CachedInputs[j].inputKey == activeGems[i].bmEvent.inputKey
+                        || CachedInputs[j].inputString == activeGems[i].bmEvent.unityInput)
                     {
                         ScoreGem(activeGems[i]);
                         

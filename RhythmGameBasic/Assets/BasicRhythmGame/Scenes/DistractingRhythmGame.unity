@@ -1044,6 +1044,21 @@ MonoBehaviour:
   - {fileID: 5483217214839925777, guid: 8fbce11d913830c4c880b83507eaf682, type: 3}
   - {fileID: 5037595431955545774, guid: ad2672390b03fd14584ccf3a1838fc48, type: 3}
   - {fileID: 4151618747842854423, guid: ffbd54c7acfcab74d91b873b9b2c4f2a, type: 3}
+  useFallingGemInputClass: 1
+  fallingGemInputs:
+  - playerInput: RhythmR
+    cueStartLocation: {fileID: 938599953}
+    cuePrefab: {fileID: 5483217214839925777, guid: 8fbce11d913830c4c880b83507eaf682,
+      type: 3}
+  - playerInput: RhythmG
+    cueStartLocation: {fileID: 464838499}
+    cuePrefab: {fileID: 5037595431955545774, guid: ad2672390b03fd14584ccf3a1838fc48,
+      type: 3}
+  - playerInput: RhythmB
+    cueStartLocation: {fileID: 289311527}
+    cuePrefab: {fileID: 4151618747842854423, guid: ffbd54c7acfcab74d91b873b9b2c4f2a,
+      type: 3}
+  beatmapParser: {fileID: 11400000, guid: 5b088a025531fd148b573d59c7fde044, type: 2}
   songSource: {fileID: 1993080931}
   songName: BeatmapReaper
 --- !u!4 &1993080930
@@ -1103,6 +1118,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activeGems: []
   currentBeatmap: {fileID: 1993080929}
+  usingUnityInputManager: 0
   gameScore: 0
 --- !u!4 &2073621976
 Transform:
