@@ -15,7 +15,7 @@ Label them as YourName_YourProjectName
 
 ## Midterm Assignment -- Make a Music Game!
 
-DUE: **March 30**
+DUE: **~~March 30~~** **April 6**
 
 ![RhythmHeaven](https://user-images.githubusercontent.com/6278122/76261433-56a7a100-6230-11ea-8291-0ea4f9cc3f31.gif)
 
@@ -23,7 +23,7 @@ Working alone or in groups of 2-3, make a music game proof of concept (basically
 
 [Here's a link to a rubric](https://docs.google.com/document/d/1lUFDX3V7PwgEINvMLPGwZgYD2T9u1Ucqciu40XX0Od4/edit?usp=sharing)
 
-We will be doing a **Check-In on March 23** that I will grade Pass/Partial/Fail, worth 20 points (20% of your midterm grade).  I’m looking for something playable!  As always, if you are absent, please upload some gameplay footage to the appropriate [Student Submissions Folder](https://drive.google.com/drive/folders/1_uvt8mfxMRaz2n0_utDQjMEBZICB_bfL?usp=sharing)
+We will be doing a **Check-In on March 23 or March 30** that I will grade Pass/Partial/Fail, worth 20 points (20% of your midterm grade).  I’m looking for something playable!  As always, if you are absent, please upload some gameplay footage to the appropriate [Student Submissions Folder](https://drive.google.com/drive/folders/1_uvt8mfxMRaz2n0_utDQjMEBZICB_bfL?usp=sharing)
 
 ## Week 6 Assignment -- Rhythm Game Prototype 2
 
