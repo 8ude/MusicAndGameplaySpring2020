@@ -9,7 +9,7 @@ NYU is now fully remote, which means the bulk of our instructions is going to ta
 
 [Monday Class (10 am - 12:45 pm EST)](https://nyu.zoom.us/j/290850168)
 
-[Thursday Office Hours (10 am - noon EST](https://nyu.zoom.us/j/899290917)
+[Thursday Office Hours (10 am - noon EST)](https://nyu.zoom.us/j/899290917)
 
 I'm also starting up virtual coworking time, basically an even more informal version of office hours, where I will screenshare my own work on class examples and rhythm games.  
 
