@@ -1,17 +1,34 @@
 # MusicAndGameplaySpring2020
 2020 version of the Music and Gameplay Class
 
-## General Note : Late and Absent Submissions
+## General Note : New Remote Classroom Procedures
 
-If you are absent for a class, or are turning in an assignment late, please upload the following:
+As of March 23, we now have a revised syllabus, with updated classroom locations and schedule.
 
-A build of the game for Windows PC (make sure you build your game into a new folder, and zip the entire contents!  Otherwise your game won't run).
+NYU is now fully remote, which means the bulk of our instructions is going to take place over zoom.  ~~Class will be held at the following links:~~ **Check Slack and your NYU Email for the Zoom Links**
 
-A short (30 second - 1 minute) playthrough video showing typical gameplay.  I recommend using [OBS](https://obsproject.com/)
+Monday Class (10 am - 12:45 pm EST)
 
-Upload these in the appropriate sub folder at [THIS LINK](https://drive.google.com/drive/folders/1_uvt8mfxMRaz2n0_utDQjMEBZICB_bfL?usp=sharing)
+Thursday Office Hours (10 am - noon EST)
 
-Label them as YourName_YourProjectName
+I'm also starting up virtual coworking time, basically an even more informal version of office hours, where I will screenshare my own work on class examples and rhythm games.  
+
+Mondays and Thursdays (2 pm - 4 pm EST)
+
+If you're looking for assignment submission instructions, that's now on a **[Wiki page over here](https://github.com/8ude/MusicAndGameplaySpring2020/wiki/Assignment-Submission-Instructions)**
+
+## Week 7 (March 23)
+
+Assignment: Have a playable prototype version of your midterm game ready by **Monday March 30**.  We will do brief group critiques in breakout rooms, and I will be checking progress.
+
+Also watch Fantasia, Fantasia 2000, or Allegro Non Troppo
+
+Fantasia and Fantasia 2000 are both available on Disney Plus.  Disney Plus has a free 7 day trial, and is about $7 a month after that.
+
+Allegro Non Troppo is not available to stream through legal means, but a quick google search for "Allegro Non Troppo Watch Online" gives a couple of links that I can't officially endorse.  The film is like a Monty Python version of Fantasia - it would probably be rated PG-13 today.
+
+Both Classic Fantasia and Allegro Non Troppo come with a Content Warning for nudity (in Fantasia it's pretty mild, Allegro is more raunchy).
+If you want to skip this in Fantasia, it's between 1:18:00-1:33:00, and again from 1:55:00-1:58:00 
 
 ## Midterm Assignment -- Make a Music Game!
 
