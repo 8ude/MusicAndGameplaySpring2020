@@ -38,3 +38,5 @@ sysinfo.txt
 
 # JetBrains Rider
 */Assets/Plugins/Editor*
+
+*.vs
