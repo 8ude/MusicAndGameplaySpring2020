@@ -7,6 +7,11 @@ using UnityEngine;
 //in the second mode, it shows the frequency data
 public class AudioBlocks : MonoBehaviour
 {
+    //for changing our visualizer mode
+
+    // scope - shows us the waveform
+    // fft - shows us the frequency distribution
+
     public enum VisualizerMode { scope, fft }
     public VisualizerMode currentMode;
     VisualizerMode previousMode;
@@ -14,27 +19,37 @@ public class AudioBlocks : MonoBehaviour
     //must be a power of 2!
     public int ArraySize = 512;
 
+    //using game objects to represent points in our audio display
     public GameObject blockPrefab;
 
     private GameObject[] blocksArray;
 
+    //arrays to store the data from the audio source
     private float[] outputDataArray;
     private float[] fftDataArray;
 
+    //control the scale of the images
     public float scalingFactorScope;
     public float scalingFactorFFT;
     public float blockSpacing;
+
+    public AnimationCurve fftScalingCurve;
 
     private AudioSource audioSource;
 
     void Awake()
     {
+
         audioSource = GetComponent<AudioSource>();
+
+        //set up our arrays
         blocksArray = new GameObject[ArraySize];
 
         outputDataArray = new float[ArraySize];
+
         fftDataArray = new float[ArraySize * 2];
 
+        //making our blocks for our visualizer
         for (int i = 0; i < ArraySize; i ++)
         {
             blocksArray[i] = Instantiate(
@@ -49,7 +64,7 @@ public class AudioBlocks : MonoBehaviour
     {
         //update audio buffers;
         audioSource.GetOutputData(outputDataArray, 0);
-        audioSource.GetSpectrumData(fftDataArray, 0, FFTWindow.Hanning);
+        audioSource.GetSpectrumData(fftDataArray, 0, FFTWindow.BlackmanHarris );
 
         //update our visuals based on what mode we're using
         switch (currentMode)
@@ -69,7 +84,7 @@ public class AudioBlocks : MonoBehaviour
                 {
                     blocksArray[i].transform.localScale = new Vector3(
                         1f,
-                        fftDataArray[i] * scalingFactorFFT,
+                        fftScalingCurve.Evaluate(fftDataArray[i]) * scalingFactorFFT,
                         1f);
                 }
 

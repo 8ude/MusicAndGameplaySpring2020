@@ -322,7 +322,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 473ec6eb3d9a5a04684cfac0cf468ce5, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 0c2051515650ed24cb9760efc560dd2a, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -420,13 +420,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d32d201429592b84abc690865db8b8e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentMode: 0
+  currentMode: 1
   ArraySize: 512
   blockPrefab: {fileID: 168582052295064017, guid: 9e8c4ed7ad31e4a46a1a1d14fb905e80,
     type: 3}
   scalingFactorScope: 100
   scalingFactorFFT: 100000
   blockSpacing: 1
+  fftScalingCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 15.674794
+      outSlope: 15.674794
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.19403712
+    - serializedVersion: 3
+      time: 0.056566164
+      value: 0.36554733
+      inSlope: 2.2663586
+      outSlope: 2.2663586
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 1
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &1690705112
 Transform:
   m_ObjectHideFlags: 0
