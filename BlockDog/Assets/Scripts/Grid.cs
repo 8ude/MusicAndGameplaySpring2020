@@ -43,7 +43,10 @@ public class Grid : MonoBehaviour {
         //NewSound
         AudioDirector.Instance.PlaySound(AudioDirector.Instance.gameStartSound, false, 0f, AudioDirector.Instance.gameStartVolume, 0f, true);
 
-        dropRate = Beat.Clock.Instance.LengthOf(AudioDirector.Instance.blockDropInterval);
+        if (AudioDirector.Instance.quantizeBlockDrops)
+        {
+            dropRate = Beat.Clock.Instance.LengthOf(AudioDirector.Instance.blockDropInterval);
+        }
         baseDropRate = dropRate;
 
         grid = new GridCell[gridHeight, gridWidth];
