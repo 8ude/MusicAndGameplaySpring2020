@@ -17,6 +17,26 @@ Mondays and Thursdays (2 pm - 4 pm EST)
 
 If you're looking for assignment submission instructions, that's now on a **[Wiki page over here](https://github.com/8ude/MusicAndGameplaySpring2020/wiki/Assignment-Submission-Instructions)**
 
+## Midterm Assignment -- Make a Music Game!
+
+DUE: **~~March 30~~** **April 6**
+
+![RhythmHeaven](https://user-images.githubusercontent.com/6278122/76261433-56a7a100-6230-11ea-8291-0ea4f9cc3f31.gif)
+
+Working alone or in groups of 2-3, make a music game proof of concept (basically a more evolved prototype).  You can use one of your prototypes as a starting point, if you wish, but I encourage you to branch out or start over with a new concept.
+
+[Submit a Windows Build and a Screen Capture HERE](https://drive.google.com/open?id=1QUUXTIJ01JNAVnaELe3ibj7wdxC8IPIQ)
+
+[Here's a link to a rubric](https://docs.google.com/document/d/1lUFDX3V7PwgEINvMLPGwZgYD2T9u1Ucqciu40XX0Od4/edit?usp=sharing)
+
+We will be doing a **Check-In on March 23 or March 30** that I will grade Pass/Partial/Fail, worth 20 points (20% of your midterm grade).  I’m looking for something playable!  As always, if you are absent, please upload some gameplay footage to the appropriate [Student Submissions Folder](https://drive.google.com/drive/folders/1_uvt8mfxMRaz2n0_utDQjMEBZICB_bfL?usp=sharing)
+
+
+## Week 9 (March 30) - Games as Musical Systems
+Assignment (Due Monday April 20) - take one of two possible example projects (Block Dog or Tour) and turn it into a "music game."  It's up to you what this means - Block Dog is grid-based, so you could think of it as a step sequencer, or choose to make it rhythmic and industrial.  Tour is more freeform and aleatoric; maybe you'd choose that to make a more ambient experience.  
+
+Either way, put some thought into how you can map a musical system onto the gameplay.  This can be as simple as quantizing feedback sounds to musical intervals, or a a dynamic score with multiple layers. 
+
 ## Week 7 (March 23)
 
 Assignment: Have a playable prototype version of your midterm game ready by **Monday March 30**.  We will do brief group critiques in breakout rooms, and I will be checking progress.
@@ -30,17 +50,7 @@ Allegro Non Troppo is not available to stream through legal means, but a quick g
 Both Classic Fantasia and Allegro Non Troppo come with a Content Warning for nudity (in Fantasia it's pretty mild, Allegro is more raunchy).
 If you want to skip this in Fantasia, it's between 1:18:00-1:33:00, and again from 1:55:00-1:58:00 
 
-## Midterm Assignment -- Make a Music Game!
 
-DUE: **~~March 30~~** **April 6**
-
-![RhythmHeaven](https://user-images.githubusercontent.com/6278122/76261433-56a7a100-6230-11ea-8291-0ea4f9cc3f31.gif)
-
-Working alone or in groups of 2-3, make a music game proof of concept (basically a more evolved prototype).  You can use one of your prototypes as a starting point, if you wish, but I encourage you to branch out or start over with a new concept.
-
-[Here's a link to a rubric](https://docs.google.com/document/d/1lUFDX3V7PwgEINvMLPGwZgYD2T9u1Ucqciu40XX0Od4/edit?usp=sharing)
-
-We will be doing a **Check-In on March 23 or March 30** that I will grade Pass/Partial/Fail, worth 20 points (20% of your midterm grade).  I’m looking for something playable!  As always, if you are absent, please upload some gameplay footage to the appropriate [Student Submissions Folder](https://drive.google.com/drive/folders/1_uvt8mfxMRaz2n0_utDQjMEBZICB_bfL?usp=sharing)
 
 ## Week 6 Assignment -- Rhythm Game Prototype 2
 
