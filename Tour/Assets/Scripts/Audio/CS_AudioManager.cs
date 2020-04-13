@@ -118,18 +118,20 @@ public class CS_AudioManager : MonoBehaviour {
 		PlaySFX(randomActivateSiteClip, 1.0f, 0f, treeSoundGroup);
 
 		
-		//////////////////////////////////
-		/// I added a counter in order to 
-		numTreesFound++;
+		//////////////////////////////////////////////////////////////////////////////////////////
+		/// I added a counter in order to map a mixer parameter onto the number of trees found ///
+        /// UnComment these to hear what it does 
+        
+		//numTreesFound++;
 		
-		menuMusicGroup.audioMixer.SetFloat("EchoWetmix",
-			RemapFloat(Mathf.Clamp(numTreesFound, 0f, 50f), 0f, 50f, 0f, 1f));
+		//menuMusicGroup.audioMixer.SetFloat("EchoWetmix",
+			//RemapFloat(Mathf.Clamp(numTreesFound, 0f, 50f), 0f, 50f, 0f, 1f));
 	}
 	
 	//========================================================================
 
 	private void Update() {
-		Debug.Log("game score: " + gameScore);
+		//Debug.Log("game score: " + gameScore);
 		float newMusicVolume = RemapFloat(Mathf.Clamp(gameScore, 0f, 500f), 0f, 500f, 0f, 1f);
 		gameMusicAudioSource.volume = newMusicVolume;
 	}
