@@ -5,7 +5,7 @@
 
 As of March 23, we now have a revised syllabus, with updated classroom locations and schedule.
 
-NYU is now fully remote, which means the bulk of our instructions is going to take place over zoom.  ~~Class will be held at the following links:~~ **Check Slack and your NYU Email for the Zoom Links**
+NYU is now fully remote, which means the bulk of our instructions is going to take place over zoom.  **Check Slack and your NYU Email for the Zoom Links**
 
 Monday Class (10 am - 12:45 pm EST)
 
@@ -32,10 +32,17 @@ Working alone or in groups of 2-3, make a music game proof of concept (basically
 We will be doing a **Check-In on March 23 or March 30** that I will grade Pass/Partial/Fail, worth 20 points (20% of your midterm grade).  I’m looking for something playable!  As always, if you are absent, please upload some gameplay footage to the appropriate [Student Submissions Folder](https://drive.google.com/drive/folders/1_uvt8mfxMRaz2n0_utDQjMEBZICB_bfL?usp=sharing)
 
 
-## Week 9 (March 30) - Games as Musical Systems
-Assignment (Due Monday April 20) - take one of two possible example projects (Block Dog or Tour) and turn it into a "music game."  It's up to you what this means - Block Dog is grid-based, so you could think of it as a step sequencer, or choose to make it rhythmic and industrial.  Tour is more freeform and aleatoric; maybe you'd choose that to make a more ambient experience.  
+## Week 9-10 (March 30) - Games as Musical Systems
+
+Assignment (Due Monday April 20): take one of two possible example projects (Block Dog or Tour) and turn it into a "music game."  
+
+It's up to you what this means - Block Dog is grid-based, so you could think of it as a step sequencer, or choose to make it rhythmic and industrial.  Tour is more freeform and aleatoric; maybe you'd choose that to make a more ambient experience.  
 
 Either way, put some thought into how you can map a musical system onto the gameplay.  This can be as simple as quantizing feedback sounds to musical intervals, or a a dynamic score with multiple layers. 
+
+You should be able to complete this project with minimal to no coding, if desired.  In Block Dog, swap out the sound effects and music on the "AudioDirector" game object.  In Tour, these sounds are on the "AudioManager" game object and its children.  I encourage you to poke around with some coding if you so desire, but keep the core gameplay intact!
+
+[Upload your builds here when you're done](https://drive.google.com/open?id=1j14bLK_txMcTF-BiPIqm-Vr1Yfj14vxR)
 
 ## Week 7 (March 23)
 
