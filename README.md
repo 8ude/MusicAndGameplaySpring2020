@@ -5,7 +5,7 @@
 
 As of March 23, we now have a revised syllabus, with updated classroom locations and schedule.
 
-NYU is now fully remote, which means the bulk of our instructions is going to take place over zoom.  ~~Class will be held at the following links:~~ **Check Slack and your NYU Email for the Zoom Links**
+NYU is now fully remote, which means the bulk of our instructions is going to take place over zoom.  **Check Slack and your NYU Email for the Zoom Links**
 
 Monday Class (10 am - 12:45 pm EST)
 
