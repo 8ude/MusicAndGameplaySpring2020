@@ -17,6 +17,20 @@ Mondays and Thursdays (2 pm - 4 pm EST)
 
 If you're looking for assignment submission instructions, that's now on a **[Wiki page over here](https://github.com/8ude/MusicAndGameplaySpring2020/wiki/Assignment-Submission-Instructions)**
 
+
+## Week 9-10 (March 30) - Games as Musical Systems
+
+Assignment (Due Monday April 20): take one of two possible example projects (Block Dog or Tour) and turn it into a "music game."  
+
+It's up to you what this means - Block Dog is grid-based, so you could think of it as a step sequencer, or choose to make it rhythmic and industrial.  Tour is more freeform and aleatoric; maybe you'd choose that to make a more ambient experience.  
+
+Either way, put some thought into how you can map a musical system onto the gameplay.  This can be as simple as quantizing feedback sounds to musical intervals, or a a dynamic score with multiple layers. 
+
+You should be able to complete this project with minimal to no coding, if desired.  In Block Dog, swap out the sound effects and music on the "AudioDirector" game object.  In Tour, these sounds are on the "AudioManager" game object and its children.  I encourage you to poke around with some coding if you so desire, but keep the core gameplay intact!
+
+[Upload your builds here when you're done](https://drive.google.com/open?id=1j14bLK_txMcTF-BiPIqm-Vr1Yfj14vxR)
+
+
 ## Midterm Assignment -- Make a Music Game!
 
 DUE: **~~March 30~~** **April 6**
@@ -30,19 +44,6 @@ Working alone or in groups of 2-3, make a music game proof of concept (basically
 [Here's a link to a rubric](https://docs.google.com/document/d/1lUFDX3V7PwgEINvMLPGwZgYD2T9u1Ucqciu40XX0Od4/edit?usp=sharing)
 
 We will be doing a **Check-In on March 23 or March 30** that I will grade Pass/Partial/Fail, worth 20 points (20% of your midterm grade).  I’m looking for something playable!  As always, if you are absent, please upload some gameplay footage to the appropriate [Student Submissions Folder](https://drive.google.com/drive/folders/1_uvt8mfxMRaz2n0_utDQjMEBZICB_bfL?usp=sharing)
-
-
-## Week 9-10 (March 30) - Games as Musical Systems
-
-Assignment (Due Monday April 20): take one of two possible example projects (Block Dog or Tour) and turn it into a "music game."  
-
-It's up to you what this means - Block Dog is grid-based, so you could think of it as a step sequencer, or choose to make it rhythmic and industrial.  Tour is more freeform and aleatoric; maybe you'd choose that to make a more ambient experience.  
-
-Either way, put some thought into how you can map a musical system onto the gameplay.  This can be as simple as quantizing feedback sounds to musical intervals, or a a dynamic score with multiple layers. 
-
-You should be able to complete this project with minimal to no coding, if desired.  In Block Dog, swap out the sound effects and music on the "AudioDirector" game object.  In Tour, these sounds are on the "AudioManager" game object and its children.  I encourage you to poke around with some coding if you so desire, but keep the core gameplay intact!
-
-[Upload your builds here when you're done](https://drive.google.com/open?id=1j14bLK_txMcTF-BiPIqm-Vr1Yfj14vxR)
 
 ## Week 7 (March 23)
 
