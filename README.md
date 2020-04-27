@@ -1,6 +1,15 @@
 # MusicAndGameplaySpring2020
 2020 version of the Music and Gameplay Class
 
+
+## FINAL PROJECT
+
+Your final project is to make a music game!  This can be a continuation of any of your past projects, or something new.  By now you have some example code at your disposal, and have made projects in some of the main music game genres - focus your attention on making something approachable and well-documented.  
+
+If someone found this game on itch.io, would they be able to play it without you walking them through it?  This means that things like controls, goals, and cues need to be well communicated, and you should have audio+visual feedback for every gameplay element. 
+
+[HERE IS A LINK](https://docs.google.com/document/d/1dyu-ENOVj3QJgpTriI7qidMWdyWuGTbwKS8Dt4C6Ubg/edit?usp=sharing) to the final project requirements.  **Note that it is now a requirement that you post your game on itch.io!**  You can set it to private if you wish, but it must be a build on the itch page.
+
 ## General Note : New Remote Classroom Procedures
 
 As of March 23, we now have a revised syllabus, with updated classroom locations and schedule.
