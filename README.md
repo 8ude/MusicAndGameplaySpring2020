@@ -58,13 +58,11 @@ We will be doing a **Check-In on March 23 or March 30** that I will grade Pass/P
 
 Assignment: Have a playable prototype version of your midterm game ready by **Monday March 30**.  We will do brief group critiques in breakout rooms, and I will be checking progress.
 
-Also watch Fantasia, Fantasia 2000, or Allegro Non Troppo
+Also watch Fantasia or Fantasia 2000
 
 Fantasia and Fantasia 2000 are both available on Disney Plus.  Disney Plus has a free 7 day trial, and is about $7 a month after that.
 
-Allegro Non Troppo is not available to stream through legal means, but a quick google search for "Allegro Non Troppo Watch Online" gives a couple of links that I can't officially endorse.  The film is like a Monty Python version of Fantasia - it would probably be rated PG-13 today.
-
-Both Classic Fantasia and Allegro Non Troppo come with a Content Warning for nudity (in Fantasia it's pretty mild, Allegro is more raunchy).
+Classic Fantasia comes with a Content Warning for nudity (it's pretty mild, involving mythical creatures).
 If you want to skip this in Fantasia, it's between 1:18:00-1:33:00, and again from 1:55:00-1:58:00 
 
 
